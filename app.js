@@ -69,6 +69,7 @@ function showCard(id){
 console.log(id)
 sebet.push(id)
 showBasket()
+calculateBasket()
 }
 
 function showBasket(){
@@ -88,6 +89,58 @@ sebet.map(id=>{
 })
 
 }
+let productPrice = document.getElementById('productPrice')
+let productDiscount = document.getElementById('productDiscount')
+let couponInput = document.getElementById('couponInput')
+let finalPrice = document.getElementById('finalPrice')
 
 
+
+
+function calculateBasket(){
+
+    let basketProducts = sebet.map(id => {
+        return productsData.find(p => p.id == id)
+    })
+
+
+    let totalPrice = basketProducts.reduce((sum, item) => {
+        return sum + +item.price
+    }, 0)
+
+
+    let totalDiscount = basketProducts.reduce((sum, item) => {
+
+        let discount = 0
+
+        if(item.discountPrice){
+            discount = +item.price - +item.discountPrice
+        }
+
+        return sum + discount
+
+    }, 0)
+
+
+    let discountedTotal = totalPrice - totalDiscount
+
+
+    let coupon = +couponInput.value
+
+    if(coupon < 0) coupon = 0
+    if(coupon > 100) coupon = 100
+
+
+    let couponDiscount = discountedTotal * coupon / 100
+
+    let payable = discountedTotal - couponDiscount
+
+
+    productPrice.innerHTML = `${totalPrice.toFixed(0)} AZN`
+
+    productDiscount.innerHTML = `-${totalDiscount.toFixed(0)} AZN`
+
+    finalPrice.innerHTML = `${payable.toFixed(0)} AZN`
+}
 getData()
+couponInput.addEventListener('input', calculateBasket)
