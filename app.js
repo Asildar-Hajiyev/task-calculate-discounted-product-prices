@@ -50,7 +50,7 @@ function getData(){
                     <div class="flex items-center justify-between">
                        <div class="flex flex-col">
                          <span class="text-2xl font-bold text-red-700 ">${item.discountPrice} AZN</span>
-                         <span class="text-xs font-light text-gray-500">${item.price} AZN</span>
+                         <span class="text-xs font-light text-gray-500 line-through">${item.price} AZN</span>
                        </div>
 
                         <button  onclick="showCard(${item.id})" class="text-white bg-black px-3 py-1 rounded-2xl cursor-pointer hover:bg-black/80 transition">
@@ -88,4 +88,6 @@ sebet.map(id=>{
 })
 
 }
+
+
 getData()

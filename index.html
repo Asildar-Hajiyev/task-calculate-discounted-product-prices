@@ -47,45 +47,48 @@
                 </div>
 
                 <!-- SUMMARY -->
-                <div class="w-full lg:max-w-[400px] bg-black p-5 text-white rounded-2xl flex flex-col gap-4 transition duration-300 hover:-translate-y-2 ">
+               <div class="w-full lg:max-w-[400px] bg-black p-5 text-white rounded-2xl flex flex-col gap-4 transition duration-300 hover:-translate-y-2">
 
-                    <h3 class="text-lg font-semibold">Yekun</h3>
+                <h3 class="text-lg font-semibold">Yekun</h3>
 
-                    <!-- Məbləğ -->
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-300">Məhsul məbləği</span>
-                        <span>1234 AZN</span>
-                    </div>
-
-                    <!-- Endirim -->
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-300">Məhsul endirimi</span>
-                        <span class="text-red-500">-1234 AZN</span>
-                    </div>
-
-                    <!-- Kupon -->
-                    <div class="flex items-center justify-between text-sm border-t border-gray-700 pt-3">
-                        <span class="text-gray-300">Kupon kodu (%)</span>
-
-                        <input
-                            type="number"
-                            value="0"
-                            class="bg-gray-800 rounded-xl w-[60px] text-center outline-none"
-                        >
-                    </div>
-
-                    <!-- Total -->
-                    <div class="flex items-center justify-between pt-2 border-t border-gray-700">
-                        <span class="text-sm text-gray-300">Ödəniləcək Məbləğ</span>
-                        <span class="text-lg font-bold">121312 AZN</span>
-                    </div>
-
-                    <!-- BUTTON -->
-                    <button class="bg-white text-black rounded-2xl px-3 py-2 font-medium hover:bg-gray-200 transition">
-                        Sifarişi Tamamla
-                    </button>
-
+                <!-- Məbləğ -->
+                <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-300">Məhsul məbləği</span>
+                    <span id="productPrice">0 AZN</span>
                 </div>
+
+                <!-- Endirim -->
+                <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-300">Məhsul endirimi</span>
+                    <span id="productDiscount" class="text-red-500">0 AZN</span>
+                </div>
+
+                <!-- Kupon -->
+                <div class="flex items-center justify-between text-sm border-t border-gray-700 pt-3">
+                    <span class="text-gray-300">Kupon kodu (%)</span>
+
+                    <input
+                        id="couponInput"
+                        type="text"
+                        value="0"
+                        min="0"
+                        max="100"
+                        class="bg-gray-800 rounded-xl w-[60px] text-center outline-none"
+                    >
+                </div>
+
+                <!-- Total -->
+                <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                    <span class="text-sm text-gray-300">Ödəniləcək Məbləğ</span>
+                    <span id="finalPrice" class="text-lg font-bold">0 AZN</span>
+                </div>
+
+                <!-- BUTTON -->
+                <button class="bg-white text-black rounded-2xl px-3 py-2 font-medium hover:bg-gray-200 transition">
+                    Sifarişi Tamamla
+                </button>
+
+            </div>
 
             </div>
             </div>
